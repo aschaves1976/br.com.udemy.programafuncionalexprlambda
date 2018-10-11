@@ -43,10 +43,18 @@ public class ProgramInterfaceFuncionalConsumer {
 
 		/*
 		 * - 4: Expressão lambda declarada
+		 * 
+		 * Consumer<Product> con = p -> p.setPrice(p.getPrice() * 1.1);
+		 * list.forEach(con);
+		 * 
 		 */
 
-		Consumer<Product> con = p -> p.setPrice(p.getPrice() * 1.1);
-		list.forEach(con);
+		/*
+		 * - 5: Expressão lambda inline
+		 */
+
+		double factor = 1.1;
+		list.forEach(p -> p.setPrice(p.getPrice() * factor));
 
 		list.forEach(System.out::println);
 	}
