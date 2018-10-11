@@ -6,7 +6,6 @@ import java.util.Locale;
 import java.util.stream.Collectors;
 
 import entities.Product;
-import util.ProductFunction;
 
 public class ProgramInterfaceFuncionalFunction {
 
@@ -32,9 +31,16 @@ public class ProgramInterfaceFuncionalFunction {
 		/*
 		 * - 1: Implementação da interface
 		 * 
+		 * list.stream().map(new ProductFunction()).collect(Collectors.toList());
 		 */
 
-		List<String> names = list.stream().map(new ProductFunction()).collect(Collectors.toList());
+		/*
+		 * - 2: Reference method com método estático
+		 * 
+		 * list.stream().map(new ProductFunction()).collect(Collectors.toList());
+		 */
+		List<String> names = list.stream().map(Product::staticProductFunction).collect(Collectors.toList());
+
 		names.forEach(System.out::println);
 	}
 
