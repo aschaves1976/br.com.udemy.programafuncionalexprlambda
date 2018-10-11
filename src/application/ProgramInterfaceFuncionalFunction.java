@@ -3,6 +3,7 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import entities.Product;
@@ -44,9 +45,17 @@ public class ProgramInterfaceFuncionalFunction {
 		/*
 		 * - 3: Reference method com método não estático
 		 * 
+		 * list.stream().map(Product::nonStaticProductFunction).collect(Collectors.
+		 * toList());
 		 */
 
-		List<String> names = list.stream().map(Product::nonStaticProductFunction).collect(Collectors.toList());
+		/*
+		 * - 4: Expressão lambda declarada
+		 */
+
+		Function<Product, String> fun = p -> p.getName().toUpperCase();
+
+		List<String> names = list.stream().map(fun).collect(Collectors.toList());
 
 		names.forEach(System.out::println);
 	}
