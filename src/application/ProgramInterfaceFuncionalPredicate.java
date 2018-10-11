@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Locale;
 
 import entities.Product;
-import util.ProductPredicate;
 
 public class ProgramInterfaceFuncionalPredicate {
 
@@ -39,10 +38,20 @@ public class ProgramInterfaceFuncionalPredicate {
 		/*
 		 * - 03: Trabalhando com um método estático dentro da classe Product(), que irá
 		 * implementar o mesmo código boolean. Ao utilizar este método na função
-		 * removeIf() estaremos trabalhando com Method Reference com método Estático
+		 * removeIf() estaremos trabalhando com Method Reference com método Estático.
+		 * 
+		 * 
+		 * 
+		 * list.removeIf(Product::staticProductPredicate); // <- esta sintaxe é que se
+		 * chama de Method Reference
+		 */
+
+		/*
+		 * - 04: Reference Method com método não estático
 		 * 
 		 */
-		list.removeIf(Product::staticProductPredicate);
+
+		list.removeIf(Product::nonStaticProductPredicate); // <- esta sintaxe é que se chama de Method Reference
 
 		for (Product p : list) {
 			System.out.println(p);
