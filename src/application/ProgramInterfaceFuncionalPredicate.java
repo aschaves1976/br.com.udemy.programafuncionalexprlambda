@@ -57,11 +57,17 @@ public class ProgramInterfaceFuncionalPredicate {
 		/*
 		 * - 05: Expressão lambda declarada
 		 * 
+		 * 
+		 * double min = 100.0; Predicate<Product> pred = p -> p.getPrice() >= min;
+		 * 
+		 * list.removeIf(pred);
+		 */
+
+		/*
+		 * - 05: Expressão lambda inline
 		 */
 		double min = 100.0;
-		Predicate<Product> pred = p -> p.getPrice() >= min;
-
-		list.removeIf(pred); // <- esta sintaxe é que se chama de Method Reference
+		list.removeIf(p -> p.getPrice() >= min);
 
 		for (Product p : list) {
 			System.out.println(p);
