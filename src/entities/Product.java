@@ -34,6 +34,10 @@ public class Product {
 		return getPrice() >= 100;
 	}
 
+	public static void staticProductConsumer(Product p) {
+		p.setPrice(p.getPrice() * 1.1);
+	}
+
 	@Override
 	public String toString() {
 		return getName() + String.format(" - $%.2f", getPrice());

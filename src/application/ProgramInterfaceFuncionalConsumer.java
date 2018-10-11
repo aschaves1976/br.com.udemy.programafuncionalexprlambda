@@ -23,7 +23,17 @@ public class ProgramInterfaceFuncionalConsumer {
 		list.add(new Product("Mouse", 50.00));
 		list.add(new Product("HD Case", 80.90));
 
-		list.forEach(new ProductConsumer());
+		/*
+		 * - 1: Implementação da interface
+		 * 
+		 * list.forEach(new ProductConsumer());
+		 */
+
+		/*
+		 * - 2: Reference method com método estático
+		 */
+		list.forEach(Product::staticProductConsumer);
+
 		list.forEach(System.out::println);
 	}
 
