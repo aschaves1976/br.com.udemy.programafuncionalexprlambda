@@ -3,6 +3,7 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.function.Predicate;
 
 import entities.Product;
 
@@ -49,9 +50,18 @@ public class ProgramInterfaceFuncionalPredicate {
 		/*
 		 * - 04: Reference Method com método não estático
 		 * 
+		 * list.removeIf(Product::nonStaticProductPredicate); // <- esta sintaxe é que
+		 * se chama de Method Reference
 		 */
 
-		list.removeIf(Product::nonStaticProductPredicate); // <- esta sintaxe é que se chama de Method Reference
+		/*
+		 * - 05: Expressão lambda declarada
+		 * 
+		 */
+		double min = 100.0;
+		Predicate<Product> pred = p -> p.getPrice() >= min;
+
+		list.removeIf(pred); // <- esta sintaxe é que se chama de Method Reference
 
 		for (Product p : list) {
 			System.out.println(p);
