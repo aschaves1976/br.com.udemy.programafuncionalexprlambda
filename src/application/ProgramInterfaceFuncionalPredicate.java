@@ -32,8 +32,18 @@ public class ProgramInterfaceFuncionalPredicate {
 		 * função removeIf. O Resultado será o igual a linha que utilizou a expressão
 		 * lambda
 		 * 
+		 * 
+		 * list.removeIf(new ProductPredicate());
 		 */
-		list.removeIf(new ProductPredicate());
+
+		/*
+		 * - 03: Trabalhando com um método estático dentro da classe Product(), que irá
+		 * implementar o mesmo código boolean. Ao utilizar este método na função
+		 * removeIf() estaremos trabalhando com Method Reference com método Estático
+		 * 
+		 */
+		list.removeIf(Product::staticProductPredicate);
+
 		for (Product p : list) {
 			System.out.println(p);
 		}
