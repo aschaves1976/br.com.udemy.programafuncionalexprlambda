@@ -39,11 +39,13 @@ public class ProgramExperienciaComparator {
 
 		/**
 		 * - 03 Melhorando a sintaxe.
+		 * 
+		 * Comparator<Product> comp = (p1, p2) ->
+		 * p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
 		 */
-		Comparator<Product> comp = (p1, p2) -> p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
-
 		// list.sort(new MyComparator());
-		list.sort(comp);
+		// Resumindo mais ainda o código com Expressão Lambda
+		list.sort((p1, p2) -> p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase()));
 
 		for (Product p : list) {
 			System.out.println(p);
