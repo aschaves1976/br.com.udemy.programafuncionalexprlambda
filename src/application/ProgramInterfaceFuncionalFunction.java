@@ -37,9 +37,16 @@ public class ProgramInterfaceFuncionalFunction {
 		/*
 		 * - 2: Reference method com método estático
 		 * 
-		 * list.stream().map(new ProductFunction()).collect(Collectors.toList());
+		 * list.stream().map(Product::staticProductFunction).collect(Collectors.toList()
+		 * );
 		 */
-		List<String> names = list.stream().map(Product::staticProductFunction).collect(Collectors.toList());
+
+		/*
+		 * - 3: Reference method com método não estático
+		 * 
+		 */
+
+		List<String> names = list.stream().map(Product::nonStaticProductFunction).collect(Collectors.toList());
 
 		names.forEach(System.out::println);
 	}
