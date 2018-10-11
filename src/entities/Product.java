@@ -38,6 +38,10 @@ public class Product {
 		p.setPrice(p.getPrice() * 1.1);
 	}
 
+	public void nonStaticProductConsumer() {
+		setPrice(getPrice() * 1.1);
+	}
+
 	@Override
 	public String toString() {
 		return getName() + String.format(" - $%.2f", getPrice());

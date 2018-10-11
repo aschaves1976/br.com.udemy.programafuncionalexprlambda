@@ -31,8 +31,15 @@ public class ProgramInterfaceFuncionalConsumer {
 
 		/*
 		 * - 2: Reference method com método estático
+		 * 
+		 * list.forEach(Product::staticProductConsumer);
 		 */
-		list.forEach(Product::staticProductConsumer);
+
+		/*
+		 * - 3: Reference method com método não estático
+		 */
+
+		list.forEach(Product::nonStaticProductConsumer);
 
 		list.forEach(System.out::println);
 	}
