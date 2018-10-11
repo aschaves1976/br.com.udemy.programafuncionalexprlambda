@@ -3,9 +3,9 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.function.Consumer;
 
 import entities.Product;
-import util.ProductConsumer;
 
 public class ProgramInterfaceFuncionalConsumer {
 
@@ -37,9 +37,16 @@ public class ProgramInterfaceFuncionalConsumer {
 
 		/*
 		 * - 3: Reference method com método não estático
+		 * 
+		 * list.forEach(Product::nonStaticProductConsumer);
 		 */
 
-		list.forEach(Product::nonStaticProductConsumer);
+		/*
+		 * - 4: Expressão lambda declarada
+		 */
+
+		Consumer<Product> con = p -> p.setPrice(p.getPrice() * 1.1);
+		list.forEach(con);
 
 		list.forEach(System.out::println);
 	}
