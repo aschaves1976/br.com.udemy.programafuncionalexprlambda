@@ -51,11 +51,12 @@ public class ProgramInterfaceFuncionalFunction {
 
 		/*
 		 * - 4: Expressão lambda declarada
+		 * 
+		 * Function<Product, String> fun = p -> p.getName().toUpperCase();
+		 * list.stream().map(fun).collect(Collectors.toList());
 		 */
 
-		Function<Product, String> fun = p -> p.getName().toUpperCase();
-
-		List<String> names = list.stream().map(fun).collect(Collectors.toList());
+		List<String> names = list.stream().map(p -> p.getName().toUpperCase()).collect(Collectors.toList());
 
 		names.forEach(System.out::println);
 	}
